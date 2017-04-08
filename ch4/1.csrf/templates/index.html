@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Flasky{% endblock %}
+
+{% block page_content %}
+    <div class="page-header">
+        <h1>Hello, {% if name %}{{ name }}{% else %}Stranger{% endif %}!</h1>
+    </div>
+
+    {# 1. HTML rending of forms#}
+    {#    <form method="post">#}
+    {#    hidden_tag는 Flask-WTF가 CSRF protection을 위해서 사용함#}
+    {#        {{ form.hidden_tag() }}#}
+    {#        {{ form.name.label }} {{ form.name() }}#}
+    {#        {{ form.submit() }}#}
+    {#    </form>#}
+    {# 2. Bootstrap style#}
+    {{ wtf.quick_form(form) }}
+{% endblock %}
