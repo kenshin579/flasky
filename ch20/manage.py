@@ -13,8 +13,8 @@ if os.path.exists('.env'):
         if len(var) == 2:
             os.environ[var[0]] = var[1]
 
-from app import create_app, db
-from app.models import User, Follow, Role, Permission, Post, Comment
+from ch20.app import create_app, db
+from ch20.app.models import User, Follow, Role, Permission, Post, Comment
 from flask_script import Manager, Shell
 from flask_migrate import Migrate, MigrateCommand
 
@@ -65,7 +65,7 @@ def profile(length=25, profile_dir=None):
 def deploy():
     """Run deployment tasks."""
     from flask_migrate import upgrade
-    from app.models import Role, User
+    from ch20.app.models import Role, User
 
     # migrate database to latest revision
     upgrade()

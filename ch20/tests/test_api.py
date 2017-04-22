@@ -1,11 +1,12 @@
-import unittest
 import json
 import re
+import unittest
 from base64 import b64encode
-from flask import url_for
-from app import create_app, db
-from app.models import User, Role, Post, Comment
 
+from app import create_app, db
+from flask import url_for
+
+from ch20.app.models import User, Role, Post, Comment
 
 class APITestCase(unittest.TestCase):
     def setUp(self):
